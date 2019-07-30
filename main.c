@@ -1,24 +1,17 @@
 #include <stdio.h>
+#include "touch.c"
 
-int main(int argc, char **argv)
-{
-	FILE *ponteiro_arquivo;
+int main(int argc, char **argv) {
+	FILE *ponteiroarquivo;
 	
-	if(argc < 2) 
-	{
-		printf("Argumento faltando\n");
+	if(argc < 2) {
+		printf("touch: nome do arquivo faltando\n");
 		printf("Sintaxe: ./main argumento1 argumento2...\n");
 	}
 	
-	else
-	{
-		for(int i = 0; i < argc; ++i)
-		{
-			ponteiro_arquivo = fopen(argv[i], "w");
-		}
-		
-		fclose(ponteiro_arquivo);
+	else {
+		touch(argc, argv, ponteiroarquivo);
 	}
-    
-    return 0;
+	
+	return 0;
 }
